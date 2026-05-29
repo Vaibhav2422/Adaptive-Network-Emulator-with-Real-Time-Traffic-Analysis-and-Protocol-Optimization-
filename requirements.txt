@@ -1,0 +1,18 @@
+# Adaptive Network Emulator - Python Dependencies
+# Pinned versions for reproducibility
+
+# Testing frameworks
+pytest>=7.0,<8.0
+hypothesis>=6.0,<7.0
+
+# Web framework for dashboard
+Flask>=2.0,<3.0
+
+# Packet capture and analysis
+pyshark>=0.5,<1.0
+
+# Configuration management
+pyyaml>=6.0,<7.0
+
+# Numerical operations
+numpy>=1.20,<2.0
