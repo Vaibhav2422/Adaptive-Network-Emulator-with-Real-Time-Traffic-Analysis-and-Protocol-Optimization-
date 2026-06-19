@@ -1,0 +1,20 @@
+# Development environment configuration
+
+num_nodes: 3
+topology_type: mesh
+routing_algorithm: dijkstra
+transport_protocol: gbn
+window_size: 4
+timeout_ms: 100
+error_rate: 0.01
+loss_rate: 0.05
+enable_optimization: true
+capture_packets: false
+random_seed: 42  # Fixed seed for reproducibility in development
+simulation_speed: 2.0  # Faster simulation for development
+log_level: DEBUG  # Verbose logging for development
+log_to_file: true
+dashboard_enabled: true
+dashboard_port: 5000
+bit_rate_mbps: 100.0
+propagation_delay_ms: 10.0

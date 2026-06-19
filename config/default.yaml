@@ -1,0 +1,38 @@
+# Default configuration for Adaptive Network Emulator
+# This is a template with all available parameters documented
+
+# Network Topology Configuration
+num_nodes: 3  # Number of nodes in the network (minimum 2)
+topology_type: mesh  # Options: mesh, star, ring, custom
+
+# Routing Configuration
+routing_algorithm: dijkstra  # Options: dijkstra, distance_vector
+
+# Transport Layer Configuration
+transport_protocol: gbn  # Options: gbn (Go-Back-N), sr (Selective Repeat)
+window_size: 4  # Sliding window size (number of packets)
+timeout_ms: 100  # Timeout in milliseconds for retransmission
+
+# Error Simulation
+error_rate: 0.01  # Bit error rate (0.0 to 1.0)
+loss_rate: 0.05  # Packet loss rate (0.0 to 1.0)
+
+# Feature Flags
+enable_optimization: true  # Enable adaptive optimization
+capture_packets: false  # Enable packet capture with PyShark
+
+# Simulation Control
+random_seed: null  # Random seed for reproducibility (null for random)
+simulation_speed: 1.0  # Simulation speed multiplier (1.0 = real-time)
+
+# Logging Configuration
+log_level: INFO  # Options: DEBUG, INFO, WARNING, ERROR
+log_to_file: true  # Write logs to file
+
+# Dashboard Configuration
+dashboard_enabled: false  # Enable web dashboard
+dashboard_port: 5000  # Dashboard port number
+
+# Physical Layer Parameters
+bit_rate_mbps: 100.0  # Transmission bit rate in Mbps
+propagation_delay_ms: 10.0  # Propagation delay in milliseconds

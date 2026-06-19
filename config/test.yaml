@@ -1,0 +1,20 @@
+# Test environment configuration
+
+num_nodes: 3
+topology_type: mesh
+routing_algorithm: dijkstra
+transport_protocol: gbn
+window_size: 4
+timeout_ms: 50  # Shorter timeout for faster tests
+error_rate: 0.0  # No errors for basic tests
+loss_rate: 0.0  # No loss for basic tests
+enable_optimization: false  # Disable for deterministic tests
+capture_packets: false
+random_seed: 12345  # Fixed seed for reproducible tests
+simulation_speed: 10.0  # Fast simulation for tests
+log_level: WARNING  # Minimal logging for tests
+log_to_file: false
+dashboard_enabled: false
+dashboard_port: 5000
+bit_rate_mbps: 100.0
+propagation_delay_ms: 1.0  # Minimal delay for tests

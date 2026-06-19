@@ -1,0 +1,20 @@
+# Production environment configuration
+
+num_nodes: 5
+topology_type: mesh
+routing_algorithm: dijkstra
+transport_protocol: sr  # Selective Repeat for better performance
+window_size: 8
+timeout_ms: 100
+error_rate: 0.001  # Low error rate
+loss_rate: 0.02  # Low loss rate
+enable_optimization: true
+capture_packets: true  # Enable packet capture for analysis
+random_seed: null  # Random seed for varied behavior
+simulation_speed: 1.0  # Real-time simulation
+log_level: INFO
+log_to_file: true
+dashboard_enabled: true
+dashboard_port: 5000
+bit_rate_mbps: 1000.0  # 1 Gbps
+propagation_delay_ms: 10.0
