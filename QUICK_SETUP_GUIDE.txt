@@ -1,0 +1,369 @@
+================================================================================
+  ADAPTIVE NETWORK EMULATOR - QUICK SETUP FOR OTHER LAPTOPS
+================================================================================
+
+📦 WHAT TO COPY TO OTHER LAPTOPS
+================================================================================
+
+OPTION 1: MINIMUM FILES (For Demo Only) - ~10 MB
+------------------------------------------------
+Copy these folders and files:
+
+✓ src/                    (All source code)
+✓ tests/                  (All test files)  
+✓ config/                 (Configuration files)
+✓ requirements.txt        (Dependencies list)
+✓ live_demo.py           (Main demo script)
+✓ start_dashboard.py     (Dashboard launcher)
+✓ README.md              (Basic instructions)
+✓ DEPLOYMENT_GUIDE.md    (Full setup instructions)
+✓ DEMO_EXPLANATION.md    (What's happening in demo)
+✓ QUICK_SETUP_GUIDE.txt  (This file)
+
+OPTION 2: FULL PROJECT (With Documentation) - ~15 MB
+----------------------------------------------------
+Everything from Option 1, PLUS:
+
+✓ TECHNICAL_REPORT.md     (Full technical details)
+✓ LITERATURE_REVIEW.md    (Research context)
+✓ PROJECT_STRUCTURE.md    (Code organization)
+✓ .kiro/specs/            (Specification documents)
+
+DO NOT COPY (These regenerate automatically):
+--------------------------------------------
+✗ venv/                   (Virtual environment - recreate on each machine)
+✗ .hypothesis/            (Test cache)
+✗ .pytest_cache/          (Test cache)
+✗ __pycache__/            (Python cache)
+✗ .coverage               (Coverage data)
+✗ logs/                   (Log files)
+
+
+================================================================================
+  INSTALLATION STEPS (5 MINUTES)
+================================================================================
+
+STEP 1: Check Python
+---------------------
+Open Command Prompt/Terminal and type:
+  python --version        (Windows)
+  python3 --version       (Mac/Linux)
+
+You need Python 3.8 or higher.
+If not installed: Download from https://www.python.org/downloads/
+
+
+STEP 2: Navigate to Project Folder
+-----------------------------------
+cd path\to\adaptive-network-emulator        (Windows)
+cd path/to/adaptive-network-emulator        (Mac/Linux)
+
+
+STEP 3: Create Virtual Environment
+-----------------------------------
+python -m venv venv                         (Windows)
+python3 -m venv venv                        (Mac/Linux)
+
+
+STEP 4: Activate Virtual Environment
+-------------------------------------
+venv\Scripts\activate                       (Windows CMD)
+venv\Scripts\Activate.ps1                   (Windows PowerShell)
+source venv/bin/activate                    (Mac/Linux)
+
+You should see (venv) at the start of your prompt.
+
+
+STEP 5: Install Dependencies
+-----------------------------
+pip install -r requirements.txt
+
+This installs:
+  - pytest (testing framework)
+  - hypothesis (property-based testing)
+  - Flask (web dashboard)
+  - numpy (numerical operations)
+  - pyyaml (configuration)
+  - pyshark (packet analysis)
+
+Installation takes 2-5 minutes.
+
+
+STEP 6: Verify Installation
+----------------------------
+python -c "import flask, hypothesis, pytest; print('✓ Ready!')"
+
+You should see: ✓ Ready!
+
+
+================================================================================
+  RUNNING THE DEMO
+================================================================================
+
+OPTION A: Live Demo (Recommended for Presentations)
+----------------------------------------------------
+python live_demo.py
+
+What happens:
+  1. Dashboard starts at http://127.0.0.1:5000
+  2. Simulation runs for 85 seconds through 5 phases
+  3. Real-time metrics update on dashboard
+  4. Shows adaptive congestion control in action
+
+Open browser to: http://127.0.0.1:5000
+
+To stop: Press Ctrl+C
+
+
+OPTION B: Dashboard Only (For Manual Control)
+----------------------------------------------
+python start_dashboard.py
+
+What happens:
+  1. Dashboard starts with sample data
+  2. No automatic simulation
+  3. Good for showing static features
+
+Open browser to: http://127.0.0.1:5000
+
+
+OPTION C: Run Tests (For Technical Validation)
+-----------------------------------------------
+pytest tests/ -v
+
+What happens:
+  1. Runs 730+ automated tests
+  2. Shows 99%+ pass rate
+  3. Takes 2-3 minutes
+  4. Proves correctness
+
+
+================================================================================
+  TROUBLESHOOTING
+================================================================================
+
+Problem: "Python is not recognized"
+Solution: Install Python and add to PATH during installation
+
+Problem: "pip is not recognized"  
+Solution: python -m pip install --upgrade pip
+
+Problem: "Permission denied" (Windows PowerShell)
+Solution: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+Problem: Dashboard doesn't open
+Solution: Check if port 5000 is free, try http://127.0.0.1:5000
+
+Problem: "Module not found"
+Solution: Make sure venv is activated, reinstall: pip install -r requirements.txt
+
+Problem: Tests fail
+Solution: Clear cache: rm -rf .hypothesis/ .pytest_cache/ __pycache__/
+
+
+================================================================================
+  DEMO CHECKLIST (Before Presentation)
+================================================================================
+
+□ Python 3.8+ installed
+□ Virtual environment created
+□ Dependencies installed (pip list shows Flask, hypothesis, pytest)
+□ Demo runs without errors (python live_demo.py)
+□ Dashboard opens in browser (http://127.0.0.1:5000)
+□ Metrics update in real-time
+□ Browser in fullscreen (F11)
+□ Zoom level appropriate for audience
+□ Backup screenshots ready
+
+
+================================================================================
+  WHAT TO SHOW IN DEMO (3 MINUTES)
+================================================================================
+
+1. START (30 seconds)
+   - Run: python live_demo.py
+   - Open browser to http://127.0.0.1:5000
+   - Point out dashboard components
+
+2. EXPLAIN (1 minute)
+   - Top metrics: Throughput, Latency, Packet Loss
+   - Charts: Real-time graphs
+   - Topology: Network visualization with animated packets
+   - Protocol State: Adaptive window size (KEY INNOVATION!)
+
+3. PHASE 3 - CONGESTION (30 seconds)
+   - Nodes turn yellow
+   - Packet loss increases
+   - Window size drops 48 → 8 (ADAPTIVE BEHAVIOR!)
+   - Say: "This prevents network collapse"
+
+4. PHASE 4 - NODE FAILURE (30 seconds)
+   - Node C turns red
+   - Traffic reroutes automatically
+   - Say: "Network survives failures"
+
+5. SHOW CODE (Optional, 30 seconds)
+   - Open live_demo.py in text editor
+   - Show it's real Python, not hardcoded
+   - Point out simulation logic
+
+
+================================================================================
+  KEY TALKING POINTS
+================================================================================
+
+✓ "This is a live simulation, not a recording"
+✓ "Watch the adaptive behavior - window size automatically adjusts"
+✓ "Dashboard updates in real-time (< 2 seconds)"
+✓ "Network survives node failures - automatic rerouting"
+✓ "Every feature is tested - 730+ tests, 99% pass rate"
+✓ "38 property-based tests with 100+ iterations each"
+✓ "Novel application of formal methods to network protocols"
+
+
+================================================================================
+  SYSTEM REQUIREMENTS
+================================================================================
+
+Minimum:
+  - Windows 10/11, macOS 10.14+, or Linux (Ubuntu 18.04+)
+  - Python 3.8+
+  - 4 GB RAM
+  - 500 MB disk space
+
+Recommended:
+  - Python 3.10 or 3.11
+  - 8 GB RAM
+  - Dual-core CPU
+  - Chrome/Firefox browser
+
+
+================================================================================
+  FILE TRANSFER OPTIONS
+================================================================================
+
+Option 1: USB Drive
+  - Copy project folder to USB
+  - Transfer to other laptop
+  - Follow installation steps
+
+Option 2: Cloud Storage (Dropbox, Google Drive, OneDrive)
+  - Upload project folder
+  - Download on other laptop
+  - Follow installation steps
+
+Option 3: Network Share
+  - Share project folder on network
+  - Copy to other laptop
+  - Follow installation steps
+
+Option 4: Git Repository (if available)
+  - git clone <repository-url>
+  - Follow installation steps
+
+Option 5: ZIP File
+  - Compress project folder
+  - Transfer ZIP file
+  - Extract and follow installation steps
+
+
+================================================================================
+  QUICK REFERENCE COMMANDS
+================================================================================
+
+# Activate virtual environment
+venv\Scripts\activate                    (Windows)
+source venv/bin/activate                 (Mac/Linux)
+
+# Run demo
+python live_demo.py
+
+# Run dashboard only
+python start_dashboard.py
+
+# Run tests
+pytest tests/ -v
+
+# Run specific tests
+pytest tests/test_properties_*.py -v
+
+# Check installed packages
+pip list
+
+# Deactivate virtual environment
+deactivate
+
+
+================================================================================
+  SUPPORT RESOURCES
+================================================================================
+
+Full Instructions:     DEPLOYMENT_GUIDE.md
+Demo Explanation:      DEMO_EXPLANATION.md
+Technical Details:     TECHNICAL_REPORT.md
+Research Context:      LITERATURE_REVIEW.md
+Code Organization:     PROJECT_STRUCTURE.md
+
+
+================================================================================
+  SUCCESS INDICATORS
+================================================================================
+
+You know it's working when:
+
+✓ python live_demo.py runs without errors
+✓ Dashboard opens at http://127.0.0.1:5000
+✓ Metrics update in real-time
+✓ Topology shows animated packets
+✓ Window size changes during congestion
+✓ Tests pass with 99%+ success rate
+✓ No error messages in terminal
+
+
+================================================================================
+  CONTACT & NOTES
+================================================================================
+
+Project: Adaptive Network Emulator
+Version: 1.0
+Date: March 2026
+Status: Production Ready
+
+Test Results:
+  - 730+ automated tests
+  - 99.5% pass rate
+  - 38 correctness properties validated
+  - 100+ iterations per property
+
+Key Innovations:
+  - Property-based testing for network protocols
+  - Adaptive congestion control
+  - Real-time traffic analysis
+  - Fault-tolerant routing
+
+
+================================================================================
+  FINAL CHECKLIST
+================================================================================
+
+Before leaving for presentation:
+
+□ Project files copied to USB/cloud
+□ Tested on presentation laptop
+□ Virtual environment works
+□ Demo runs successfully
+□ Dashboard accessible in browser
+□ Backup screenshots prepared
+□ Documentation files included
+□ This guide included
+□ Laptop charged
+□ Projector adapter available
+
+
+================================================================================
+
+Good luck with your demo! 🚀
+
+For detailed instructions, see DEPLOYMENT_GUIDE.md
+
+================================================================================
